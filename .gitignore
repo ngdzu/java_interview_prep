@@ -1,0 +1,28 @@
+# Maven / Java
+/target/
+.classpath
+.project
+.settings/
+/.idea/
+/*.iml
+*.log
+
+# IntelliJ
+.idea/
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Eclipse
+.metadata
+.classpath
+.project
+
+# Spring Boot Devtools
+spring-boot-devtools.properties
