@@ -21,4 +21,11 @@ public class PersonService {
     public List<Person> list() {
         return repo.findAll();
     }
+
+    public boolean delete(Long id) {
+        if (!repo.existsById(id))
+            return false;
+        repo.deleteById(id);
+        return true;
+    }
 }

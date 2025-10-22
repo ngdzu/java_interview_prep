@@ -27,4 +27,12 @@ public class PersonController {
         Person saved = service.create(p.getName());
         return ResponseEntity.created(URI.create("/api/persons/" + saved.getId())).body(saved);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        boolean deleted = service.delete(id);
+        if (deleted)
+            return ResponseEntity.noContent().build();
+        return ResponseEntity.notFound().build();
+    }
 }
