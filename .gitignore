@@ -1,5 +1,8 @@
 # Maven / Java
 /target/
+# Maven / Java
+# ignore any `target` directory anywhere in the tree
+target/
 .classpath
 .project
 .settings/
