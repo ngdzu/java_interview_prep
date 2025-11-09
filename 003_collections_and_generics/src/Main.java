@@ -12,9 +12,17 @@ public class Main {
 
     public static <T extends Comparable<? super T>> List<T> mergeAndSort(List<? extends T> a, List<? extends T> b) {
         List<T> out = new ArrayList<>(a.size() + b.size());
-        out.addAll((Collection<T>) a);
-        out.addAll((Collection<T>) b);
+        out.addAll(a);
+        out.addAll(b);
         Collections.sort(out);
         return Collections.unmodifiableList(out);
+    }
+
+    public static <T extends Comparable<? super T>> List<T> mergeThenSort(List<? extends T> a, List<? extends T>b){
+        List<T> out = new ArrayList<>(a.size() + b.size());
+        out.addAll(a);
+        out.addAll(b);
+        Collections.sort(out);
+        return out;
     }
 }

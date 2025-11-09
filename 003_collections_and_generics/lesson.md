@@ -2,6 +2,39 @@
 
 The Collections framework is central to Java. Since Java 6, generics became ubiquitous and several convenience APIs and utility factory methods arrived. This lesson covers generic usage, wildcards, the Collections utility methods (`List.of`, `Map.of` in later JDKs), autoboxing pitfalls, and performance considerations (ArrayList vs LinkedList, HashMap sizing, load factor).
 
+### Collection Hierarchy
+
+Java Collections follow a clear hierarchy of interfaces and implementations:
+
+```
+Iterable (root interface)
+├── Collection
+│   ├── List (ordered, allows duplicates)
+│   │   ├── ArrayList (resizable array, fast random access)
+│   │   ├── LinkedList (doubly-linked list, fast insertions/deletions)
+│   │   └── Vector (synchronized ArrayList, legacy)
+│   ├── Set (unique elements)
+│   │   ├── HashSet (hash table, no order)
+│   │   ├── LinkedHashSet (maintains insertion order)
+│   │   └── TreeSet (sorted set, red-black tree)
+│   └── Queue (FIFO structure)
+│       ├── LinkedList (basic queue implementation)
+│       ├── PriorityQueue (priority-based ordering)
+│       └── ArrayDeque (resizable array, efficient for stack/queue)
+└── Map (key-value pairs, not extending Collection)
+    ├── HashMap (hash table, no order)
+    ├── LinkedHashMap (maintains insertion order)
+    ├── TreeMap (sorted by keys)
+    └── ConcurrentHashMap (thread-safe)
+```
+
+**Key Points:**
+- `Iterable` is the root, providing the `iterator()` method.
+- `Collection` extends `Iterable` and adds core operations (add, remove, contains, size).
+- `List`, `Set`, and `Queue` extend `Collection`.
+- `Map` is separate but works closely with collections (keySet(), values(), entrySet()).
+- Implementations vary in performance: ArrayList for fast access, LinkedList for fast modifications, HashMap for O(1) lookups.
+
 ### Key takeaways
 
 - Generics: know when to use `? extends` vs `? super`. Use PECS (Producer Extends, Consumer Super).
