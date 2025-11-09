@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         List<Integer> a = List.of(3, 1, 2);
         List<Integer> b = List.of(4, 5);
-        List<Integer> merged = mergeAndSort(a, b);
+        List<Integer> merged = mergeThenSort(a, b);
         System.out.println(merged);
     }
 
