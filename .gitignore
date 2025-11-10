@@ -29,3 +29,6 @@ Thumbs.db
 
 # Spring Boot Devtools
 spring-boot-devtools.properties
+
+# Ignore practice folders in any lesson
+*/practice/
